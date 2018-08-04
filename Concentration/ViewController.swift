@@ -97,9 +97,11 @@ class ViewController: UIViewController {
             if emojiText.count > 0
             {
                 //type transfer
-                let randomIdex = Int(arc4random_uniform(UInt32(emojiText.count)))
+                //let randomIdex = Int(arc4random_uniform(UInt32(emojiText.count)))
                 //return the item you removed, after return, remove it from the list
-                emoji[card.identifier] = emojiText.remove(at: randomIdex)
+                //emoji[card.identifier] = emojiText.remove(at: randomIdex)
+                //use extention method
+                emoji[card.identifier] = emojiText.remove(at: emojiText.count.arc4random)
             }
             
         }
@@ -130,5 +132,27 @@ class ViewController: UIViewController {
     //        }
     //    }
     
+}
+
+
+//add extention of exisitng(system) method
+extension Int
+{
+    var arc4random: Int
+    {
+        if self > 0
+        {
+            return Int(arc4random_uniform(UInt32(self)))
+        }
+        else if self < 0
+        {
+            return -Int(arc4random_uniform(UInt32(abs(self))))
+        }
+        else
+        {
+            return 0
+        }
+        
+    }
 }
 
