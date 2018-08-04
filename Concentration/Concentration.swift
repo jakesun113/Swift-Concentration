@@ -15,8 +15,40 @@ class Concentration
     var cards = Array<Card>()
     //var cards = [Card]()
     
-    //optioanl type
+    //change to computed property
     var indexOfoneCardFacedUp :Int?
+    {
+        get
+        {
+            var foundIndex: Int?
+            for index in cards.indices
+            {
+                if cards[index].isFaceUp
+                {
+                    if foundIndex == nil
+                    {
+                        foundIndex = index
+                    }
+                    else
+                    {
+                        return nil
+                    }
+                }
+            }
+            return foundIndex
+        }
+        
+        set(newValue)
+        {
+            for index in cards.indices
+            {
+                //when index == newValue, set faceUp as true
+                //in other cases, set as false
+                cards[index].isFaceUp = (index == newValue)
+            }
+            
+        }
+    }
     
     //index based to search array
     func chooseCard(at index: Int)
@@ -33,17 +65,9 @@ class Concentration
                 }
                 
                 cards[index].isFaceUp = true
-                indexOfoneCardFacedUp = nil
             }
             else
             {
-                //either no cards or 2 cards are faced up
-                for flipDownIndex in cards.indices
-                {
-                    cards[flipDownIndex].isFaceUp = false
-                }
-                
-                cards[index].isFaceUp = true
                 indexOfoneCardFacedUp = index
             }
         }

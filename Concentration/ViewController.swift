@@ -13,7 +13,17 @@ class ViewController: UIViewController {
     //use model in controller
     //lazy: not initialize until try to use it
     //not work in Swift3, work in Swift4
-    lazy var game = Concentration(numberofPairsOfCards: (touchButton.count + 1 ) / 2)
+    lazy var game = Concentration(numberofPairsOfCards: numberofPairsOfCards)
+    
+    //computed property
+    var numberofPairsOfCards: Int
+    {
+        //if only get method (read-only property), can be omitted
+        get
+        {
+            return (touchButton.count + 1 ) / 2
+        }
+    }
     
     var flipCount :Int = 0
     {
