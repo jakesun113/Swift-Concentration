@@ -29,11 +29,11 @@ struct Card
     
     //create unique id
     
-    static var idFactory = 0
+    private static var idFactory = 0
     
     //return type "->" int
     //static method, like global method, send type of Card
-    static func getUniqueId() -> Int
+    private static func getUniqueId() -> Int
     {
         idFactory += 1
         return idFactory

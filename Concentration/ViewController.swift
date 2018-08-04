@@ -13,7 +13,8 @@ class ViewController: UIViewController {
     //use model in controller
     //lazy: not initialize until try to use it
     //not work in Swift3, work in Swift4
-    lazy var game = Concentration(numberofPairsOfCards: numberofPairsOfCards)
+    //set to private cause numberofPairsOfcards is relevant to UI, don't want it to be public
+    private lazy var game = Concentration(numberofPairsOfCards: numberofPairsOfCards)
     
     //computed property
     var numberofPairsOfCards: Int
@@ -25,7 +26,8 @@ class ViewController: UIViewController {
         }
     }
     
-    var flipCount :Int = 0
+    //don't want other object to set the value of flipCount
+    private(set) var flipCount :Int = 0
     {
         // property observer
         didSet{
@@ -33,14 +35,14 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var flipCountLabel: UILabel!
+    @IBOutlet private weak var flipCountLabel: UILabel!
     
     //array attributes
     //Type: optional, two states: set (array) or unset -> "nil"
-    @IBOutlet var touchButton: [UIButton]!
+    @IBOutlet private var touchButton: [UIButton]!
     
     
-    @IBAction func touchCard(_ sender: UIButton) {
+    @IBAction private func touchCard(_ sender: UIButton) {
         
         //print("a ghost!!")
         flipCount += 1
@@ -58,7 +60,7 @@ class ViewController: UIViewController {
         //print("card number: \(cardNumber)")
     }
     
-    func updateViewFromModel()
+    private func updateViewFromModel()
     {
         //another way
         for index in touchButton.indices
@@ -81,13 +83,13 @@ class ViewController: UIViewController {
         }
     }
     
-    var emojiText : Array<String> = ["👻","🎃","🤡","🦇","👿","🤖","🙈","☂️"]
+    private var emojiText : Array<String> = ["👻","🎃","🤡","🦇","👿","🤖","🙈","☂️"]
     
     //dictionary type
     //var emoji = Dictionary<Int,String>()
-    var emoji = [Int:String]()
+    private var emoji = [Int:String]()
     
-    func emoji(for card: Card) -> String
+    private func emoji(for card: Card) -> String
     {
         
         if emoji[card.identifier] == nil

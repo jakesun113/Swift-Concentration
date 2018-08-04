@@ -12,11 +12,12 @@ import Foundation
 class Concentration
 {
     //instance of a struct
-    var cards = Array<Card>()
+    //can access, but cannot change the value of cards
+    private(set) var cards = Array<Card>()
     //var cards = [Card]()
     
     //change to computed property
-    var indexOfoneCardFacedUp :Int?
+    private var indexOfoneCardFacedUp :Int?
     {
         get
         {
@@ -51,8 +52,12 @@ class Concentration
     }
     
     //index based to search array
+    //make it public so that other object can use it
     func chooseCard(at index: Int)
     {
+        //add assertion, if not true, program will crash
+        assert(cards.indices.contains(index), "Concentration.chooseCard(at: \(index)): chosen index not in the cards")
+        
         if !cards[index].isMatched
         {
             if let matchIndex = indexOfoneCardFacedUp, matchIndex != index
@@ -76,6 +81,8 @@ class Concentration
     
     init(numberofPairsOfCards: Int)
     {
+        assert(numberofPairsOfCards > 0, "Concentration.init(at: \(numberofPairsOfCards)): you must have at least one pair of cards")
+        
         //after in, can be any sequence (array, string, counterable range)
         //range: from 1 to numberofPairsOfCards
         for _ in 1...numberofPairsOfCards
