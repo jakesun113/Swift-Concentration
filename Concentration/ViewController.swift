@@ -87,12 +87,14 @@ class ViewController: UIViewController {
     
     //dictionary type
     //var emoji = Dictionary<Int,String>()
-    private var emoji = [Int:String]()
+    
+    //change key of the dictionary from "int" to "Card" itself using protocol
+    private var emoji = [Card:String]()
     
     private func emoji(for card: Card) -> String
     {
         
-        if emoji[card.identifier] == nil
+        if emoji[card] == nil
         {
             if emojiText.count > 0
             {
@@ -101,14 +103,14 @@ class ViewController: UIViewController {
                 //return the item you removed, after return, remove it from the list
                 //emoji[card.identifier] = emojiText.remove(at: randomIdex)
                 //use extention method
-                emoji[card.identifier] = emojiText.remove(at: emojiText.count.arc4random)
+                emoji[card] = emojiText.remove(at: emojiText.count.arc4random)
             }
             
         }
         //every time look up in a dictionary, return type "optional"
-        if emoji[card.identifier] != nil
+        if emoji[card] != nil
         {
-            return emoji[card.identifier]!
+            return emoji[card]!
         }
         else
         {

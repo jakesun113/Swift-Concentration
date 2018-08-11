@@ -14,11 +14,22 @@ import Foundation
 //struct has no inheritance
 //struct is value type, class is reference type
 //when passing struct type, you copy them
-struct Card
+//you can pass struct type like a value around the program
+struct Card: Hashable
 {
+    //implement hashable and equable protocol
+    var hashValue: Int { return identifier}
+    
+    static func ==(ihs: Card, rhs:Card) -> Bool
+    {
+        return ihs.identifier == rhs.identifier
+    }
+    
+    
     var isFaceUp = false
     var isMatched = false
-    var identifier: Int
+    // change type to "private"
+    private var identifier: Int
     
     //init tend to have to same internal and external name
     //init(identifier: Int)
