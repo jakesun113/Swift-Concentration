@@ -31,11 +31,35 @@ class ViewController: UIViewController {
     {
         // property observer
         didSet{
-            flipCountLabel.text = "Flips: \(flipCount)"
+            updateFlipCountLabel()
+            //flipCountLabel.text = "Flips: \(flipCount)"
         }
     }
     
+    //add AttributedString
+    
+    private func updateFlipCountLabel()
+    {
+        let attributes: [NSAttributedStringKey:Any] =
+            [
+                .strokeWidth: 5.0,
+                .strokeColor: #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
+        ]
+        
+        let attributedString = NSAttributedString(string: "Flips: \(flipCount)", attributes: attributes)
+        
+        flipCountLabel.attributedText = attributedString
+    }
+
+
+    //add didSet method in "outlet"
     @IBOutlet private weak var flipCountLabel: UILabel!
+        {
+        didSet
+        {
+            updateFlipCountLabel()
+        }
+    }
     
     //array attributes
     //Type: optional, two states: set (array) or unset -> "nil"
