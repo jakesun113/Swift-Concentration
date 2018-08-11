@@ -83,7 +83,9 @@ class ViewController: UIViewController {
         }
     }
     
-    private var emojiText : Array<String> = ["👻","🎃","🤡","🦇","👿","🤖","🙈","☂️"]
+    //change type from "Array" to "String"
+    //private var emojiText : Array<String> = ["👻","🎃","🤡","🦇","👿","🤖","🙈","☂️"]
+    private var emojiText = "👻🎃🤡🦇👿🤖🙈☂️"
     
     //dictionary type
     //var emoji = Dictionary<Int,String>()
@@ -103,7 +105,10 @@ class ViewController: UIViewController {
                 //return the item you removed, after return, remove it from the list
                 //emoji[card.identifier] = emojiText.remove(at: randomIdex)
                 //use extention method
-                emoji[card] = emojiText.remove(at: emojiText.count.arc4random)
+                
+                //change type to "String"
+                let randomStringIndex = emojiText.index(emojiText.startIndex, offsetBy: emojiText.count.arc4random)
+                emoji[card] = String(emojiText.remove(at: randomStringIndex))
             }
             
         }
