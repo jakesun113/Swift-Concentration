@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ConcentrationViewController: UIViewController {
     
     //use model in controller
     //lazy: not initialize until try to use it
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         let attributes: [NSAttributedStringKey:Any] =
             [
                 .strokeWidth: 5.0,
-                .strokeColor: #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
+                .strokeColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         ]
         
         let attributedString = NSAttributedString(string: "Flips: \(flipCount)", attributes: attributes)
@@ -87,6 +87,8 @@ class ViewController: UIViewController {
     private func updateViewFromModel()
     {
         //another way
+        if(touchButton != nil)
+        {
         for index in touchButton.indices
             //for index in 0..<touchButton.count
         {
@@ -95,18 +97,26 @@ class ViewController: UIViewController {
             if card.isFaceUp
             {
                 button.setTitle(emoji(for : card), for: UIControlState.normal)
-                button.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+                button.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
             }
             else
             {
                 button.setTitle("", for: UIControlState.normal)
                 //if matched, opcity:0, clear
-                button.backgroundColor = card.isMatched ? #colorLiteral(red: 0.8762708306, green: 0.9558493495, blue: 0.968680203, alpha: 0) : #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
+                button.backgroundColor = card.isMatched ? #colorLiteral(red: 0.8762708306, green: 0.9558493495, blue: 0.968680203, alpha: 0) : #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)
             }
             
-        }
+            }}
     }
     
+    //add theme
+    var theme: String?{
+        didSet{
+            emojiText = theme ?? ""
+            emoji = [:]
+            updateViewFromModel()
+        }
+    }
     //change type from "Array" to "String"
     //private var emojiText : Array<String> = ["👻","🎃","🤡","🦇","👿","🤖","🙈","☂️"]
     private var emojiText = "👻🎃🤡🦇👿🤖🙈☂️"

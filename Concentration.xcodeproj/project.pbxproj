@@ -7,21 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54A18547215E25460079C38F /* ConcentrationThemeChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A18546215E25460079C38F /* ConcentrationThemeChooserViewController.swift */; };
 		A652C7C6210ACD4E0088E569 /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A652C7C5210ACD4E0088E569 /* Concentration.swift */; };
 		A652C7C8210ACE290088E569 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A652C7C7210ACE290088E569 /* Card.swift */; };
 		A680A54A21082EE80050207A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680A54921082EE80050207A /* AppDelegate.swift */; };
-		A680A54C21082EE80050207A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680A54B21082EE80050207A /* ViewController.swift */; };
+		A680A54C21082EE80050207A /* ConcentrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680A54B21082EE80050207A /* ConcentrationViewController.swift */; };
 		A680A54F21082EE80050207A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A680A54D21082EE80050207A /* Main.storyboard */; };
 		A680A55121082EE80050207A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A680A55021082EE80050207A /* Assets.xcassets */; };
 		A680A55421082EE80050207A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A680A55221082EE80050207A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		54A18546215E25460079C38F /* ConcentrationThemeChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationThemeChooserViewController.swift; sourceTree = "<group>"; };
 		A652C7C5210ACD4E0088E569 /* Concentration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
 		A652C7C7210ACE290088E569 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		A680A54621082EE80050207A /* Concentration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concentration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A680A54921082EE80050207A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A680A54B21082EE80050207A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A680A54B21082EE80050207A /* ConcentrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationViewController.swift; sourceTree = "<group>"; };
 		A680A54E21082EE80050207A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A680A55021082EE80050207A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A680A55321082EE80050207A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,8 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				A680A55B2108306D0050207A /* supporting files */,
-				A680A54B21082EE80050207A /* ViewController.swift */,
+				A680A54B21082EE80050207A /* ConcentrationViewController.swift */,
 				A680A54D21082EE80050207A /* Main.storyboard */,
+				54A18546215E25460079C38F /* ConcentrationThemeChooserViewController.swift */,
 				A652C7C5210ACD4E0088E569 /* Concentration.swift */,
 				A652C7C7210ACE290088E569 /* Card.swift */,
 				A680A55521082EE80050207A /* Info.plist */,
@@ -152,7 +155,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A680A54C21082EE80050207A /* ViewController.swift in Sources */,
+				54A18547215E25460079C38F /* ConcentrationThemeChooserViewController.swift in Sources */,
+				A680A54C21082EE80050207A /* ConcentrationViewController.swift in Sources */,
 				A680A54A21082EE80050207A /* AppDelegate.swift in Sources */,
 				A652C7C6210ACD4E0088E569 /* Concentration.swift in Sources */,
 				A652C7C8210ACE290088E569 /* Card.swift in Sources */,
